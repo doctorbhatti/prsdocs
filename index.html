@@ -162,410 +162,409 @@
         </section>
       </div>
     </div>
-                  <div class="docs-content">
-                    <h3 id="stepec"><strong>Email configuration</strong> -</h3>
-                    <p>For sending Emails, SMTP serve use in the application. In order to use it you need to do the following steps</p>
-                    <p><strong>2 Step Verification Enable:</strong></p>
-                    <p>If your 2 step verification enable in gmail account you need to do the following steps.</p>
-                    <ul>
-                      <li>Login into Gmail .</li>
-                      <li>Click on the "Google Account".</li>
-                      <li>Click Security -> App Passwords</li>
-                      <li>Select "Mail" as the app and "Other (Custom name)" as the device from the drop downs then click generate.</li>
-                      <li>New window open with your 16 character app password . (Kindly copy this and keep it safe).</li>
-                      <li>Know open your .env file and change the following setting</li>
-                      <ol>
-                        <li>MAIL_DRIVER=smtp</li>
-                        <li>MAIL_HOST=smtp.gmail.com</li>
-                        <li>MAIL_PORT=465</li>
-                        <li>MAIL_USERNAME=youraccount@gmail.com</li>
-                        <li>MAIL_PASSWORD=your-app-password</li>
-                        <li>MAIL_ENCRYPTION=ssl</li>
-                      </ol>
-                    </ul>
-                    <p><strong>2 Step Verification Disable:</strong></p>
-                    <ul>
-                      <li>Open your .env file and change the following setting</li>
-                      <ol>
-                        <li>MAIL_DRIVER=smtp</li>
-                        <li>MAIL_HOST=smtp.gmail.com</li>
-                        <li>MAIL_PORT=587</li>
-                        <li>MAIL_USERNAME=youraccount@gmail.com</li>
-                        <li>MAIL_PASSWORD=your-gmail-password</li>
-                        <li>MAIL_ENCRYPTION=tls</li>
-                      </ol>
-                    </ul>
-                    <hr>
-                    <hr>
-                    <h3 id="step4"><strong>Clearing Cache</strong> -</h3>
-                    <p> You can clear your cache from admin dashboard as shown in below image. </p>
-                    <ul>
-                      <li><a href="assets/images/cache_clear.png" target="_blank">View Image</a></li>
-                    </ul>
-                    <h3 id="stepCacheM"><strong>Cache Clear Manually</strong> -</h3>
-                    <p>For clear cache manually follow the steps given below</p>
-                    <ul>
-                      <li>Go to project root folder</li>
-                      <li>Open bootstrap folder</li>
-                      <li>Open cache folder</li>
-                      <li>Delete all files inside the cache folder</li>
-                    </ul>
-                    <hr>
-                    <h3 id="stepTranslate"><strong>Translate Languages</strong> -</h3>
-                    <p>Translation of strings is termed as localization in laravel official documention.</p>
-                    <p>You can change language according to your need in journals by following the steps given below.</p>
-                    <ul>
-                      <li>Go to project main folder you will find "resources" folder e.g journals &gt; resources&nbsp;</li>
-                    </ul>
-                    <figure><img src="assets/images/article-img-1.png" data-image="3341544803" class="img-responsive img-thumbnail"></figure>
-                    <ul>
-                      <li>There you will find a folder named "lang"&nbsp;&nbsp;</li>
-                    </ul>
-                    <figure><img src="assets/images/article-img-2.png" data-image="7850601978" class="img-responsive img-thumbnail"></figure>
-                    <ul>
-                      <li>In which there are language folders like "en", "es" etc.&nbsp;</li>
-                    </ul>
-                    <figure><img src="assets/images/article-img-3.png" data-image="5050997008" class="img-responsive img-thumbnail"></figure>
-                    <ul>
-                      <li>
-                        <p>Create your language folder with its code name e.g "en", "es" etc.</p>
-                      </li>
-                      <li>Copy all the files from "en" folder&nbsp;and paste it in your folder that you want your application to be translated in.&nbsp;&nbsp;</li>
-                    </ul>
-                    <figure><img src="assets/images/article-img-4.png" data-image="4282440407" class="img-responsive img-thumbnail"></figure>
-                    <ul>
-                      <li>All files contain the translated strings of the whole application. You have to translate all files manually.</li>
-                      <li>Go to project main folder (root) -&gt; app folder -&gt; Helper.php&nbsp;</li>
-                    </ul>
-                    <figure><img src="assets/images/article-img-13.png" data-image="3506759881" class="img-responsive img-thumbnail"></figure>
-                    <ul>
-                      <li>Open Helper.php find (getTranslatedLang) function add your created language in list e.g&nbsp;<br>'fr' =&gt; array(
-                        'code' =&gt; 'fr',
-                        'title' =&gt; 'French',
-                        ),&nbsp;</li>
-                      <li>Go to Admin Dashboard -&gt; Manage Site you will find "Language Settings" option if you do previous step correctly you will find your language in the dropdown as shown in image below.&nbsp;</li>
-                    </ul>
-                    <ul>
-                      <li>select your language and click save.&nbsp;</li>
-                    </ul>
-                    <figure><img src="assets/images/article-img-15.png" data-image="3448917285" class="img-responsive img-thumbnail"></figure>
-                    <ul>
-                      <li>If language not change then go to Admin Dashboard -&gt; Manage Site from the menu &gt; Cache clear and clear all the cache from there as shown in below image.&nbsp;</li>
-                    </ul>
-                    <figure><img src="assets/images/cache_clear.png" data-image="4883589715" class="img-responsive img-thumbnail"></figure>
-                    <p>For more information regrading translation in laravel you can consult its documention <a href="https://laravel.com/docs/5.7/localization#introduction" rel="nofollow">Laravel Localization</a></p>
-                    <hr>
-                    <h3 id="stepTranslateL"><strong>Translate Language On Local Server</strong> -</h3>
-                    <p>If you are having problem translating languages on local server please follow the steps given below</p>
-                    <ul>
-                      <li>Select the language from the admin panel and save the settings as shown in the image <br>
-                        <figure><img src="assets/images/article-img-15.png" data-image="3448917285" class="img-responsive img-thumbnail"></figure>
-                      </li>
-                      <li>Now stop your <strong>artisan server</strong></li>
-                      <li>Go to project root folder</li>
-                      <li>Open bootstrap folder</li>
-                      <li>Open cache folder</li>
-                      <li>Delete all files inside the cache folder</li>
-                      <li>Now start your <strong>artisan server</strong> again and refresh you site on local server.</li>
-                      <li>Your website will be translated.</li>
-                    </ul>
-                    <hr>
-                    <h3 id="step5"><strong>Demo Content</strong> -</h3>
-                    <ul>
-                      <li>Remember that when you install new project your database will be created with demo content.</li>
-                      <li>In order to import demo content type <strong><em>create-database</em></strong> with the url and fresh demo will
-                        be imported on your website as shown in the image below.</li>
-                      <li>You can login as super admin by the following credentials.</li>
-                      <li><a>User Name:</a> doctorbhatti@docsprs.com </li>
-                      <li><a>Password:</a> hayafatima </li>
-                      <li>You can change your user name and password from Manage Users as described <a data-scrollto="#manage_user" href="#manage_user"> here</a>.</li>
-                      <div class="jf-description">
-                        <p class="label label-danger">Remember<br><em>This command will erase your current content and import new demo .</em>
-                        </p>
-                      </div>
-                    </ul>
-                    <p><strong>Remember</strong><br><em>This command will erase your current content and import new demo .</em> <a href="assets/images/create-database.png" target="_blank">View Image</a>
-                    </p>
-                    <h3 id="step6"><strong>General Settings</strong> -</h3>
-                    <p>General Settings of the theme includes</p>
-                    <ul class="jf-sectiondetails">
-                      <li>Manage Site - It is located in the dashboard of the editor and the super admin</li>
-                      <li>Only editor and the super admin have the access to change site settings</li>
-                      <li><a href="assets/images/site_settings.png" target="_blank">View Image</a></li>
-                    </ul>
-                    <h4 id="general_step1"><strong>Site Settings</strong></h4>
-                    <p>In site settings you can easily manage the general settings of the site.</p>
-                    <h5>Social Icons</h5>
-                    <ul>
-                      <li>Add Social Icons</li>
-                      <li>You can easily add and delete the site social icons</li>
-                      <li>Icons will be displayed in the <strong>header</strong> and the <strong>About Us</strong> widget in the footer</li>
-                      <li><a href="assets/images/socials.png" target="_blank">View Image</a></li>
-                    </ul>
-                    <h5>Site Logo</h5>
-                    <ul>
-                      <li>Add Site Logo</li>
-                      <li>You can easily add logo of the site</li>
-                      <li>Logo will be displayed in the header and footer of the site.</li>
-                      <li><a href="assets/images/site-logo.png" target="_blank">View Image</a></li>
-                    </ul>
-                    <h5>Home Slider Settings</h5>
-                    <ul>
-                      <li>You can add as many slides as you want.</li>
-                      <li>You can add Slide Image, title and description which will be displayed on the home page.</li>
-                      <li><a href="assets/images/home-slider.png" target="_blank">View Image</a></li>
-                    </ul>
-                    <h5>Welcome Page Settings</h5>
-                    <ul>
-                      <li>Select the welcome page to show on the home page.</li>
-                      <li>First you have to create the page by going to the <a data-scrollto="#mp" href="#"> Manage Pages</a></li>
-                      <li>Then select the page you want to make welcome page.</li>
-                      <li>You can add welcome slider images from welcome page slider.</li>
-                      <li><a href="assets/images/welcome-page.png" target="_blank">View Image</a></li>
-                    </ul>
-                    <h5>Impact Factor Widget</h5>
-                    <ul>
-                      <li>Impact factor widget will be shown on the sidebar</li>
-                      <li>If you don't want to display it on the sidebar just leave it empty.</li>
-                      <li><a href="assets/images/impact-factor.png" target="_blank">View Image</a></li>
-                    </ul>
-                    <h5>Notice Board Widget</h5>
-                    <ul>
-                      <li>Notice Board widget will also be shown on the sidebar</li>
-                      <li>If you don't want to display it on the sidebar just leave it empty.</li>
-                      <li><a href="assets/images/notice-widget.png" target="_blank">View Image</a></li>
-                    </ul>
-                    <h5>Ad Widget Image</h5>
-                    <ul>
-                      <li>It will be shown on the sidebar</li>
-                      <li>you can remove the image by clicking the red cross icon.</li>
-                      <li><a href="assets/images/ad-widget.png" target="_blank">View Image</a></li>
-                    </ul>
-                    <h5>Footer Settings</h5>
-                    <p>Footer settings include Contact Info Widget, About Us Widget and Resources Widget. <a href="assets/images/footer-settings.png" target="_blank">View Image</a> </p>
-                    <h5>Contact Info Widget</h5>
-                    <ul>
-                      <li>Contact Information widget includes Address, Phone Number, Fax Number and Email</li>
-                      <li><a href="assets/images/contact-info.png" target="_blank">View Image</a></li>
-                    </ul>
-                    <h5>About Us Widget</h5>
-                    <p>You can add about us note or leave it empty for not displaying on the footer. <a href="assets/images/about-us.png" target="_blank">View Image</a></p>
-                    <h5>Resources Widget</h5>
-                    <ul>
-                      <li>You have to create pages first for selecting it in the resource widget.</li>
-                      <li>You can add resource pages into the Resources widget.</li>
-                      <li>It will be displayed in the footer.</li>
-                      <li><a href="assets/images/resource-widget.png" target="_blank">View Image</a></li>
-                    </ul>
-                    <hr>
-                    <h3 id="general_step2"><strong>Manage Pages</strong> -</h3>
-                    <p>You can easily manage pages in the general settings</p>
-                    <ul id="mp">
-                      <li>Click on the Add A New Page Button</li>
-                      <li>You will be redirected to the Add Pages page where you can enter page detail</li>
-                      <li>In order to create sub menu you need to select the parent of the page you are editing.</li>
-                      <li><a href="assets/images/add-pages.png" target="_blank">View Image 1</a></li>
-                      <li><a href="assets/images/add-new-page.png" target="_blank">View Image 2</a></li>
-                      <li>After submiting the details of the page you will be redirected to the Listing page where you can easily delete
-                        or edit the page.</li>
-                      <li>When the page is created, it will be shown in the main menu.</li>
-                      <li><a href="assets/images/page-list.png" target="_blank">View Image 3</a></li>
-                    </ul>
-                    <hr>
-                    <h3 id="general_step3"><strong>Account Settings</strong> -</h3>
-                    <p>Every user has the acces to upload user image and change the account password as he/she likes. <a href="assets/images/account-set.png" target="_blank">View Image</a></p>
-                    <hr>
-                    <h3 id="general_step4"><strong>Email Templates</strong> -</h3>
-                    <p>Email Templates can only be set by the super admin.</p>
-                    <ul id="et">
-                      <li>When you select email templates from the Side Menu or from the top menu</li>
-                      <li>It will redirect to the Email Templates Listing page. </li>
-                      <li>Here you can edit email templates by clicking on pencil icon</li>
-                      <li><a href="assets/images/et-1.png" target="_blank">View Image 1</a></li>
-                      <li>You will enter the subject of the email.</li>
-                      <li>You will enter title of the Email</li>
-                    </ul>
-                    <strong>Most Important steps in the creation of an email template are:</strong>
-                    <ul>
-                      <li>Select the email type you want your email to look like e.g New Article(Creation of new Article)<br>
-                        The list of email types and why they are used are given below
-                      </li>
-                      <li>After selection of the email type you have to select the User Type for which the template is being created such
-                        as
-                        Author, SuperAdmin etc
-                      </li>
-                      <li>After selection of the User type variables for that particular templates will be visible under the user type
-                        field which you can use in the text editor to make your email more beautiful.</li>
-                      <li>Every Variable description is given with them as shown in the image below.</li>
-                    </ul>
-                    <p>
-                      <strong>List of Email Types and what they mean</strong><br>
-                      New Article ------- When the new Article is created.<br>
-                      Assign Reviewer ------- When the Article is assigned to the reviewer.<br>
-                      Resubmit Article ------- When Article is resubmitted.<br>
-                      Reviewer Feedback ------- When reviewer gives feedback.<br>
-                      Admin Feedback ------- When admin gives feedback.<br>
-                      Publish Edition ------- When new Edition is published.<br>
-                      Add New User ------- When new User user is created.<br>
-                      Change Password ------- When the password is changed.<br>
-                      Update User Data ------- When the new Article is created.<br>
-                      New Order Received ------- When the new Order is received.<br>
-                      Successful Order ------- When the order is successfully placed.<br>
-                      Major Revision Editor Feedback ------- Admin feedback in case of major revision.<br>
-                      Accepted Articles Editor Feedback ------- Admin feedback in case of accepted article.<br>
-                      Rejected Articles Editor Feedback ------- Admin feedback in case of rejected article.<br>
-                      Minor Revision Articles Editor Feedback ------- Admin feedback in case of minor revision.<br>
-                      <a href="assets/images/et-2.png" target="_blank">View Image 2</a>
-                    </p>
-                    <hr>
-                    <h3 id="step7"><strong>Roles</strong> -</h3>
-                    <p>There are five types of roles in the Peer Review System or named as Scientific Journals</p>
-                    <ul id="roles">
-                      <li>Super Admin- Have access to each and every aspect of the site, he/she can create, edit or delete anything.</li>
-                      <li>Admin/Editor- Have access to many functionalities such as <strong>Manage Users</strong>,<strong>Create Editions</strong>,<strong>Creat
-                          Categories</strong> etc</li>
-                      <li>Author- Have only access to create the articles and view the final comments of the editor.</li>
-                      <li>Reviewer- Have only access to give reviews to the assigned article.</li>
-                      <li>Reader- Have access to <b>purchase articles</b>, <b>view orders</b>, <b>download the purchased articles</b> and
-                        <b>view the invoice of order</b>.</li>
-                    </ul>
-                    <p>Each of the roles have their own dashboards.</p>
-                    <h4 id="roles_step1"><strong>SuperAdmin</strong></h4>
-                    <h5 id="pm-free">Payment Settings</h5>
-                    <p>Payment setting can only be set by super admin.</p>
-                    <h6>Free Mode</h6>
-                    <p>When payment mode is set to free, download button display above the articles and can be downloaded by any user.
-                      <a href="assets/images/pm-free.png" target="_blank">View Image </a></p>
-                    <h6>Individual Mode</h6>
-                    <ul>
-                      <li>When payment mode is set to invidual product, purchased button display above the published articles</li>
-                      <li>Only user registered as a reader can purchase the article</li>
-                      <li>When payment mode set to invidual product, additional payment settings display </li>
-                      <li>In payment settings section you need to add "Paypal Credentials". </li>
-                      <li>For testing you need to set payment mode to "Test Mode" under "Payment Settings Section".</li>
-                      <li><a href="assets/images/paid-mode.png" target="_blank">View Image</a></li>
-                    </ul>
-                    <h5 id="manage_user">Manage Users</h5>
-                    <p>Only superadmin have the access to create users and assign specific roles to them.
-                      By default in the seeder dummy users are created</p>
-                    <ul>
-                      <li>Click Add User Button</li>
-                      <li>You will be redirected to the Add Users page where you can enter user detail</li>
-                      <li><a href="assets/images/add-user.png" target="_blank">View Image 1</a></li>
-                      <li><a href="assets/images/create-user.png" target="_blank">View Image 2</a></li>
-                      <li>After submiting the details of the user you will be redirected to the User Listing page</li>
-                      <li>From here you can easily delete or edit the user</li>
-                      <li>If the categorie are created then it can be only be assiged to reviewer as shown in the image below.</li>
-                      <li><a href="assets/images/user-list.png" target="_blank">View Image 3</a></li>
-                      <li><a href="assets/images/edit-user.png" target="_blank">View Image 4</a></li>
-                    </ul>
-                    <h5>Manage Articles</h5>
-                    <p>You can manage your articles from here <a href="assets/images/articles-under.png" target="_blank">View Image 1</a></p>
-                    <p>Just click on the Detail button and you will be redirected to the Detail page where you can</p>
-                    <ul>
-                      <li>Download the article.</li>
-                      <li>Assign Articles to the reviewers.</li>
-                      <li>Give feed back to the author.</li>
-                      <li><a href="assets/images/article-detail.png" target="_blank">View Image 2</a></li>
-                    </ul>
-                    <h5>Manage Editions & Categories</h5>
-                    <h6>Editions</h6>
-                    <p>Editions can be created both by admin and the super admin.</p>
-                    <ul>
-                      <li>You will enter Edition Title</li>
-                      <li>Edition Date is also required</li>
-                      <li>Edition price is also required. If payment method is set to individual product.</li>
-                      <li>When submitted the edition details it will redirect you to the edition list page.</li>
-                      <li><a href="assets/images/edition-create.png" target="_blank">View Image 1</a></li>
-                    </ul>
-                    <p>When the edition is created you can</p>
-                    <ul>
-                      <li>Edit the edition.</li>
-                      <li>Publish the edition.</li>
-                      <li>Assign articles to the edition or if the articles are assigned to the specific edition the button will apper
-                        with the title assigned articles.</li>
-                      <li><a href="assets/images/edition-created.png" target="_blank">View Image 2</a></li>
-                    </ul>
-                    <p>Edition can be edited by adding information you want to update <a href="assets/images/edit-edition.png" target="_blank">View
-                        Image 3</a>.</p>
-                    <h6>Categories</h6>
-                    <p>Categories can also be created both by admin and the super admin.</p>
-                    <ul>
-                      <li>Just click on add new category button</li>
-                      <li>A popup will appear in which you will enter the details of the category which includes</li>
-                      <li>Category Title, Category Description and Category Image</li>
-                      <li>After the submission of category details it will redirect you to the category list page, with the message on
-                        the top-right corner.</li>
-                      <li><a href="assets/images/cat-creation2.png" target="_blank">View Image 1</a></li>
-                    </ul>
-                    <p>When the category is created you can</p>
-                    <ul>
-                      <li>Edit the category.</li>
-                      <li>Delete the category.</li>
-                      <li><a href="assets/images/cat-edi.png" target="_blank">View Image 2</a></li>
-                    </ul>
-                    <h5 id="es">Email Settings</h5>
-                    <p>This is the email settings of your company account from which you will send or receive emails.
-                      Credentaials should be same as you have on live. The email credentials will be the be automaically configured in
-                      the .env file</p>
-                    <h6>Remember</h6>
-                    <p>Email settings are required for your system. Until you set email settings a warning message will always
-                      show on the top right corner of all pages. <a href="assets/images/email-set.png" target="_blank">View Image 3</a>
-                    </p>
-                    <h4 id="roles_step2"><strong>Admin/Editor</strong></h4>
-                    <h5>Manage Articles</h5>
-                    <p>You can manage your articles from here. <a href="assets/images/articles-under.png" target="_blank">View Image 1</a></p>
-                    <p>Just click on the Detail button and you will be redirected to the Detail page where you can</p>
-                    <ul>
-                      <li>Download the article.</li>
-                      <li>Assign Articles to the reviewers.</li>
-                      <li>Give feed back to the author.</li>
-                      <li><a href="assets/images/article-detail.png" target="_blank">View Image 2</a></li>
-                    </ul>
-                    <h4 id="roles_step3"><strong>Author</strong></h4>
-                    <h5>Create Article</h5>
-                    <p>Only author can submit article.</p>
-                    <ul>
-                      <li>After article is reviewed author can view the final comments of the super admin or the admin and can see the
-                        status of the article.</li>
-                      <li><a href="assets/images/create-article.png" target="_blank">View Image 1</a></li>
-                    </ul>
-                    <p>When the article is submitted you will be redirected to the articles under review page. <a href="assets/images/articles-under.png" target="_blank">View Image 2</a></p>
-                    <h4 id="roles_step4"><strong>Reviewer</strong></h4>
-                    <h5>Feedback</h5>
-                    <p>Reviewer can only give the feedback to the articles assigned to him/her. <a href="assets/images/reviewer-feedback.png" target="_blank">View Image </a></p>
-                    <h4 id="roles_step5"><strong>Reader</strong></h4>
-                    <h5>Download Purchased Articles</h5>
-                    <ul>
-                      <li>If payment settings is set to individual product.</li>
-                      <li>Then only reader can purchase the article and download it form Download Products Menu as shown in the image
-                        below.</li>
-                      <li>Reader can generate the invoice and can print it</li>
-                      <li><a href="assets/images/reader-downloads.png" target="_blank">View Image </a></li>
-                    </ul>
-                    <hr>
-                    <h3 id="step8"><strong>Since version 1.0</strong> -</h3>
-                    <p>- Released Docs Peer Review System(PRS)</p>
-                    <hr class="space">
-                  </div>
-                  <footer style="margin: 0 !important;">©2021 Docs Peer Review System(PRS). All rights reserved.</footer>
-                </div>
-                </div>
-                <!-- end div .container -->
-                <!-- end wrapper -->
-                <script src="js/jquery.min.js"></script>
-                <script src="js/bootstrap.min.js"></script>
-                <script src="js/retina.js"></script>
-                <script src="js/jquery.fitvids.js"></script>
-                <script src="js/wow.js"></script>
-                <script src="js/jquery.prettyPhoto.js"></script>
-                <!-- CUSTOM PLUGINS -->
-                <script src="js/custom.js"></script>
-                <script src="js/main.js"></script>
-                <script src="js/syntax-highlighter/scripts/shCore.js"></script>
-                <script src="js/syntax-highlighter/scripts/shBrushXml.js"></script>
-                <script src="js/syntax-highlighter/scripts/shBrushCss.js"></script>
-                <script src="js/syntax-highlighter/scripts/shBrushJScript.js"></script>
+    <div class="docs-content">
+      <h3 id="stepec"><strong>Email configuration</strong> -</h3>
+      <p>For sending Emails, SMTP serve use in the application. In order to use it you need to do the following steps</p>
+      <p><strong>2 Step Verification Enable:</strong></p>
+      <p>If your 2 step verification enable in gmail account you need to do the following steps.</p>
+      <ul>
+        <li>Login into Gmail .</li>
+        <li>Click on the "Google Account".</li>
+        <li>Click Security -> App Passwords</li>
+        <li>Select "Mail" as the app and "Other (Custom name)" as the device from the drop downs then click generate.</li>
+        <li>New window open with your 16 character app password . (Kindly copy this and keep it safe).</li>
+        <li>Know open your .env file and change the following setting</li>
+        <ol>
+          <li>MAIL_DRIVER=smtp</li>
+          <li>MAIL_HOST=smtp.gmail.com</li>
+          <li>MAIL_PORT=465</li>
+          <li>MAIL_USERNAME=youraccount@gmail.com</li>
+          <li>MAIL_PASSWORD=your-app-password</li>
+          <li>MAIL_ENCRYPTION=ssl</li>
+        </ol>
+      </ul>
+      <p><strong>2 Step Verification Disable:</strong></p>
+      <ul>
+        <li>Open your .env file and change the following setting</li>
+        <ol>
+          <li>MAIL_DRIVER=smtp</li>
+          <li>MAIL_HOST=smtp.gmail.com</li>
+          <li>MAIL_PORT=587</li>
+          <li>MAIL_USERNAME=youraccount@gmail.com</li>
+          <li>MAIL_PASSWORD=your-gmail-password</li>
+          <li>MAIL_ENCRYPTION=tls</li>
+        </ol>
+      </ul>
+      <hr>
+      <hr>
+      <h3 id="step4"><strong>Clearing Cache</strong> -</h3>
+      <p> You can clear your cache from admin dashboard as shown in below image. </p>
+      <ul>
+        <li><a href="assets/images/cache_clear.png" target="_blank">View Image</a></li>
+      </ul>
+      <h3 id="stepCacheM"><strong>Cache Clear Manually</strong> -</h3>
+      <p>For clear cache manually follow the steps given below</p>
+      <ul>
+        <li>Go to project root folder</li>
+        <li>Open bootstrap folder</li>
+        <li>Open cache folder</li>
+        <li>Delete all files inside the cache folder</li>
+      </ul>
+      <hr>
+      <h3 id="stepTranslate"><strong>Translate Languages</strong> -</h3>
+      <p>Translation of strings is termed as localization in laravel official documention.</p>
+      <p>You can change language according to your need in journals by following the steps given below.</p>
+      <ul>
+        <li>Go to project main folder you will find "resources" folder e.g journals &gt; resources&nbsp;</li>
+      </ul>
+      <figure><img src="assets/images/article-img-1.png" data-image="3341544803" class="img-responsive img-thumbnail"></figure>
+      <ul>
+        <li>There you will find a folder named "lang"&nbsp;&nbsp;</li>
+      </ul>
+      <figure><img src="assets/images/article-img-2.png" data-image="7850601978" class="img-responsive img-thumbnail"></figure>
+      <ul>
+        <li>In which there are language folders like "en", "es" etc.&nbsp;</li>
+      </ul>
+      <figure><img src="assets/images/article-img-3.png" data-image="5050997008" class="img-responsive img-thumbnail"></figure>
+      <ul>
+        <li>
+          <p>Create your language folder with its code name e.g "en", "es" etc.</p>
+        </li>
+        <li>Copy all the files from "en" folder&nbsp;and paste it in your folder that you want your application to be translated in.&nbsp;&nbsp;</li>
+      </ul>
+      <figure><img src="assets/images/article-img-4.png" data-image="4282440407" class="img-responsive img-thumbnail"></figure>
+      <ul>
+        <li>All files contain the translated strings of the whole application. You have to translate all files manually.</li>
+        <li>Go to project main folder (root) -&gt; app folder -&gt; Helper.php&nbsp;</li>
+      </ul>
+      <figure><img src="assets/images/article-img-13.png" data-image="3506759881" class="img-responsive img-thumbnail"></figure>
+      <ul>
+        <li>Open Helper.php find (getTranslatedLang) function add your created language in list e.g&nbsp;<br>'fr' =&gt; array(
+          'code' =&gt; 'fr',
+          'title' =&gt; 'French',
+          ),&nbsp;</li>
+        <li>Go to Admin Dashboard -&gt; Manage Site you will find "Language Settings" option if you do previous step correctly you will find your language in the dropdown as shown in image below.&nbsp;</li>
+      </ul>
+      <ul>
+        <li>select your language and click save.&nbsp;</li>
+      </ul>
+      <figure><img src="assets/images/article-img-15.png" data-image="3448917285" class="img-responsive img-thumbnail"></figure>
+      <ul>
+        <li>If language not change then go to Admin Dashboard -&gt; Manage Site from the menu &gt; Cache clear and clear all the cache from there as shown in below image.&nbsp;</li>
+      </ul>
+      <figure><img src="assets/images/cache_clear.png" data-image="4883589715" class="img-responsive img-thumbnail"></figure>
+      <p>For more information regrading translation in laravel you can consult its documention <a href="https://laravel.com/docs/5.7/localization#introduction" rel="nofollow">Laravel Localization</a></p>
+      <hr>
+      <h3 id="stepTranslateL"><strong>Translate Language On Local Server</strong> -</h3>
+      <p>If you are having problem translating languages on local server please follow the steps given below</p>
+      <ul>
+        <li>Select the language from the admin panel and save the settings as shown in the image <br>
+          <figure><img src="assets/images/article-img-15.png" data-image="3448917285" class="img-responsive img-thumbnail"></figure>
+        </li>
+        <li>Now stop your <strong>artisan server</strong></li>
+        <li>Go to project root folder</li>
+        <li>Open bootstrap folder</li>
+        <li>Open cache folder</li>
+        <li>Delete all files inside the cache folder</li>
+        <li>Now start your <strong>artisan server</strong> again and refresh you site on local server.</li>
+        <li>Your website will be translated.</li>
+      </ul>
+      <hr>
+      <h3 id="step5"><strong>Demo Content</strong> -</h3>
+      <ul>
+        <li>Remember that when you install new project your database will be created with demo content.</li>
+        <li>In order to import demo content type <strong><em>create-database</em></strong> with the url and fresh demo will
+          be imported on your website as shown in the image below.</li>
+        <li>You can login as super admin by the following credentials.</li>
+        <li><a>User Name:</a> doctorbhatti@docsprs.com </li>
+        <li><a>Password:</a> hayafatima </li>
+        <li>You can change your user name and password from Manage Users as described <a data-scrollto="#manage_user" href="#manage_user"> here</a>.</li>
+        <div class="jf-description">
+          <p class="label label-danger">Remember<br><em>This command will erase your current content and import new demo .</em>
+          </p>
+        </div>
+      </ul>
+      <p><strong>Remember</strong><br><em>This command will erase your current content and import new demo .</em> <a href="assets/images/create-database.png" target="_blank">View Image</a>
+      </p>
+      <h3 id="step6"><strong>General Settings</strong> -</h3>
+      <p>General Settings of the theme includes</p>
+      <ul class="jf-sectiondetails">
+        <li>Manage Site - It is located in the dashboard of the editor and the super admin</li>
+        <li>Only editor and the super admin have the access to change site settings</li>
+        <li><a href="assets/images/site_settings.png" target="_blank">View Image</a></li>
+      </ul>
+      <h4 id="general_step1"><strong>Site Settings</strong></h4>
+      <p>In site settings you can easily manage the general settings of the site.</p>
+      <h5>Social Icons</h5>
+      <ul>
+        <li>Add Social Icons</li>
+        <li>You can easily add and delete the site social icons</li>
+        <li>Icons will be displayed in the <strong>header</strong> and the <strong>About Us</strong> widget in the footer</li>
+        <li><a href="assets/images/socials.png" target="_blank">View Image</a></li>
+      </ul>
+      <h5>Site Logo</h5>
+      <ul>
+        <li>Add Site Logo</li>
+        <li>You can easily add logo of the site</li>
+        <li>Logo will be displayed in the header and footer of the site.</li>
+        <li><a href="assets/images/site-logo.png" target="_blank">View Image</a></li>
+      </ul>
+      <h5>Home Slider Settings</h5>
+      <ul>
+        <li>You can add as many slides as you want.</li>
+        <li>You can add Slide Image, title and description which will be displayed on the home page.</li>
+        <li><a href="assets/images/home-slider.png" target="_blank">View Image</a></li>
+      </ul>
+      <h5>Welcome Page Settings</h5>
+      <ul>
+        <li>Select the welcome page to show on the home page.</li>
+        <li>First you have to create the page by going to the <a data-scrollto="#mp" href="#"> Manage Pages</a></li>
+        <li>Then select the page you want to make welcome page.</li>
+        <li>You can add welcome slider images from welcome page slider.</li>
+        <li><a href="assets/images/welcome-page.png" target="_blank">View Image</a></li>
+      </ul>
+      <h5>Impact Factor Widget</h5>
+      <ul>
+        <li>Impact factor widget will be shown on the sidebar</li>
+        <li>If you don't want to display it on the sidebar just leave it empty.</li>
+        <li><a href="assets/images/impact-factor.png" target="_blank">View Image</a></li>
+      </ul>
+      <h5>Notice Board Widget</h5>
+      <ul>
+        <li>Notice Board widget will also be shown on the sidebar</li>
+        <li>If you don't want to display it on the sidebar just leave it empty.</li>
+        <li><a href="assets/images/notice-widget.png" target="_blank">View Image</a></li>
+      </ul>
+      <h5>Ad Widget Image</h5>
+      <ul>
+        <li>It will be shown on the sidebar</li>
+        <li>you can remove the image by clicking the red cross icon.</li>
+        <li><a href="assets/images/ad-widget.png" target="_blank">View Image</a></li>
+      </ul>
+      <h5>Footer Settings</h5>
+      <p>Footer settings include Contact Info Widget, About Us Widget and Resources Widget. <a href="assets/images/footer-settings.png" target="_blank">View Image</a> </p>
+      <h5>Contact Info Widget</h5>
+      <ul>
+        <li>Contact Information widget includes Address, Phone Number, Fax Number and Email</li>
+        <li><a href="assets/images/contact-info.png" target="_blank">View Image</a></li>
+      </ul>
+      <h5>About Us Widget</h5>
+      <p>You can add about us note or leave it empty for not displaying on the footer. <a href="assets/images/about-us.png" target="_blank">View Image</a></p>
+      <h5>Resources Widget</h5>
+      <ul>
+        <li>You have to create pages first for selecting it in the resource widget.</li>
+        <li>You can add resource pages into the Resources widget.</li>
+        <li>It will be displayed in the footer.</li>
+        <li><a href="assets/images/resource-widget.png" target="_blank">View Image</a></li>
+      </ul>
+      <hr>
+      <h3 id="general_step2"><strong>Manage Pages</strong> -</h3>
+      <p>You can easily manage pages in the general settings</p>
+      <ul id="mp">
+        <li>Click on the Add A New Page Button</li>
+        <li>You will be redirected to the Add Pages page where you can enter page detail</li>
+        <li>In order to create sub menu you need to select the parent of the page you are editing.</li>
+        <li><a href="assets/images/add-pages.png" target="_blank">View Image 1</a></li>
+        <li><a href="assets/images/add-new-page.png" target="_blank">View Image 2</a></li>
+        <li>After submiting the details of the page you will be redirected to the Listing page where you can easily delete
+          or edit the page.</li>
+        <li>When the page is created, it will be shown in the main menu.</li>
+        <li><a href="assets/images/page-list.png" target="_blank">View Image 3</a></li>
+      </ul>
+      <hr>
+      <h3 id="general_step3"><strong>Account Settings</strong> -</h3>
+      <p>Every user has the acces to upload user image and change the account password as he/she likes. <a href="assets/images/account-set.png" target="_blank">View Image</a></p>
+      <hr>
+      <h3 id="general_step4"><strong>Email Templates</strong> -</h3>
+      <p>Email Templates can only be set by the super admin.</p>
+      <ul id="et">
+        <li>When you select email templates from the Side Menu or from the top menu</li>
+        <li>It will redirect to the Email Templates Listing page. </li>
+        <li>Here you can edit email templates by clicking on pencil icon</li>
+        <li><a href="assets/images/et-1.png" target="_blank">View Image 1</a></li>
+        <li>You will enter the subject of the email.</li>
+        <li>You will enter title of the Email</li>
+      </ul>
+      <strong>Most Important steps in the creation of an email template are:</strong>
+      <ul>
+        <li>Select the email type you want your email to look like e.g New Article(Creation of new Article)<br>
+          The list of email types and why they are used are given below
+        </li>
+        <li>After selection of the email type you have to select the User Type for which the template is being created such
+          as
+          Author, SuperAdmin etc
+        </li>
+        <li>After selection of the User type variables for that particular templates will be visible under the user type
+          field which you can use in the text editor to make your email more beautiful.</li>
+        <li>Every Variable description is given with them as shown in the image below.</li>
+      </ul>
+      <p>
+        <strong>List of Email Types and what they mean</strong><br>
+        New Article ------- When the new Article is created.<br>
+        Assign Reviewer ------- When the Article is assigned to the reviewer.<br>
+        Resubmit Article ------- When Article is resubmitted.<br>
+        Reviewer Feedback ------- When reviewer gives feedback.<br>
+        Admin Feedback ------- When admin gives feedback.<br>
+        Publish Edition ------- When new Edition is published.<br>
+        Add New User ------- When new User user is created.<br>
+        Change Password ------- When the password is changed.<br>
+        Update User Data ------- When the new Article is created.<br>
+        New Order Received ------- When the new Order is received.<br>
+        Successful Order ------- When the order is successfully placed.<br>
+        Major Revision Editor Feedback ------- Admin feedback in case of major revision.<br>
+        Accepted Articles Editor Feedback ------- Admin feedback in case of accepted article.<br>
+        Rejected Articles Editor Feedback ------- Admin feedback in case of rejected article.<br>
+        Minor Revision Articles Editor Feedback ------- Admin feedback in case of minor revision.<br>
+        <a href="assets/images/et-2.png" target="_blank">View Image 2</a>
+      </p>
+      <hr>
+      <h3 id="step7"><strong>Roles</strong> -</h3>
+      <p>There are five types of roles in the Peer Review System or named as Scientific Journals</p>
+      <ul id="roles">
+        <li>Super Admin- Have access to each and every aspect of the site, he/she can create, edit or delete anything.</li>
+        <li>Admin/Editor- Have access to many functionalities such as <strong>Manage Users</strong>,<strong>Create Editions</strong>,<strong>Creat
+            Categories</strong> etc</li>
+        <li>Author- Have only access to create the articles and view the final comments of the editor.</li>
+        <li>Reviewer- Have only access to give reviews to the assigned article.</li>
+        <li>Reader- Have access to <b>purchase articles</b>, <b>view orders</b>, <b>download the purchased articles</b> and
+          <b>view the invoice of order</b>.</li>
+      </ul>
+      <p>Each of the roles have their own dashboards.</p>
+      <h4 id="roles_step1"><strong>SuperAdmin</strong></h4>
+      <h5 id="pm-free">Payment Settings</h5>
+      <p>Payment setting can only be set by super admin.</p>
+      <h6>Free Mode</h6>
+      <p>When payment mode is set to free, download button display above the articles and can be downloaded by any user.
+        <a href="assets/images/pm-free.png" target="_blank">View Image </a></p>
+      <h6>Individual Mode</h6>
+      <ul>
+        <li>When payment mode is set to invidual product, purchased button display above the published articles</li>
+        <li>Only user registered as a reader can purchase the article</li>
+        <li>When payment mode set to invidual product, additional payment settings display </li>
+        <li>In payment settings section you need to add "Paypal Credentials". </li>
+        <li>For testing you need to set payment mode to "Test Mode" under "Payment Settings Section".</li>
+        <li><a href="assets/images/paid-mode.png" target="_blank">View Image</a></li>
+      </ul>
+      <h5 id="manage_user">Manage Users</h5>
+      <p>Only superadmin have the access to create users and assign specific roles to them.
+        By default in the seeder dummy users are created</p>
+      <ul>
+        <li>Click Add User Button</li>
+        <li>You will be redirected to the Add Users page where you can enter user detail</li>
+        <li><a href="assets/images/add-user.png" target="_blank">View Image 1</a></li>
+        <li><a href="assets/images/create-user.png" target="_blank">View Image 2</a></li>
+        <li>After submiting the details of the user you will be redirected to the User Listing page</li>
+        <li>From here you can easily delete or edit the user</li>
+        <li>If the categorie are created then it can be only be assiged to reviewer as shown in the image below.</li>
+        <li><a href="assets/images/user-list.png" target="_blank">View Image 3</a></li>
+        <li><a href="assets/images/edit-user.png" target="_blank">View Image 4</a></li>
+      </ul>
+      <h5>Manage Articles</h5>
+      <p>You can manage your articles from here <a href="assets/images/articles-under.png" target="_blank">View Image 1</a></p>
+      <p>Just click on the Detail button and you will be redirected to the Detail page where you can</p>
+      <ul>
+        <li>Download the article.</li>
+        <li>Assign Articles to the reviewers.</li>
+        <li>Give feed back to the author.</li>
+        <li><a href="assets/images/article-detail.png" target="_blank">View Image 2</a></li>
+      </ul>
+      <h5>Manage Editions & Categories</h5>
+      <h6>Editions</h6>
+      <p>Editions can be created both by admin and the super admin.</p>
+      <ul>
+        <li>You will enter Edition Title</li>
+        <li>Edition Date is also required</li>
+        <li>Edition price is also required. If payment method is set to individual product.</li>
+        <li>When submitted the edition details it will redirect you to the edition list page.</li>
+        <li><a href="assets/images/edition-create.png" target="_blank">View Image 1</a></li>
+      </ul>
+      <p>When the edition is created you can</p>
+      <ul>
+        <li>Edit the edition.</li>
+        <li>Publish the edition.</li>
+        <li>Assign articles to the edition or if the articles are assigned to the specific edition the button will apper
+          with the title assigned articles.</li>
+        <li><a href="assets/images/edition-created.png" target="_blank">View Image 2</a></li>
+      </ul>
+      <p>Edition can be edited by adding information you want to update <a href="assets/images/edit-edition.png" target="_blank">View
+          Image 3</a>.</p>
+      <h6>Categories</h6>
+      <p>Categories can also be created both by admin and the super admin.</p>
+      <ul>
+        <li>Just click on add new category button</li>
+        <li>A popup will appear in which you will enter the details of the category which includes</li>
+        <li>Category Title, Category Description and Category Image</li>
+        <li>After the submission of category details it will redirect you to the category list page, with the message on
+          the top-right corner.</li>
+        <li><a href="assets/images/cat-creation2.png" target="_blank">View Image 1</a></li>
+      </ul>
+      <p>When the category is created you can</p>
+      <ul>
+        <li>Edit the category.</li>
+        <li>Delete the category.</li>
+        <li><a href="assets/images/cat-edi.png" target="_blank">View Image 2</a></li>
+      </ul>
+      <h5 id="es">Email Settings</h5>
+      <p>This is the email settings of your company account from which you will send or receive emails.
+        Credentaials should be same as you have on live. The email credentials will be the be automaically configured in
+        the .env file</p>
+      <h6>Remember</h6>
+      <p>Email settings are required for your system. Until you set email settings a warning message will always
+        show on the top right corner of all pages. <a href="assets/images/email-set.png" target="_blank">View Image 3</a>
+      </p>
+      <h4 id="roles_step2"><strong>Admin/Editor</strong></h4>
+      <h5>Manage Articles</h5>
+      <p>You can manage your articles from here. <a href="assets/images/articles-under.png" target="_blank">View Image 1</a></p>
+      <p>Just click on the Detail button and you will be redirected to the Detail page where you can</p>
+      <ul>
+        <li>Download the article.</li>
+        <li>Assign Articles to the reviewers.</li>
+        <li>Give feed back to the author.</li>
+        <li><a href="assets/images/article-detail.png" target="_blank">View Image 2</a></li>
+      </ul>
+      <h4 id="roles_step3"><strong>Author</strong></h4>
+      <h5>Create Article</h5>
+      <p>Only author can submit article.</p>
+      <ul>
+        <li>After article is reviewed author can view the final comments of the super admin or the admin and can see the
+          status of the article.</li>
+        <li><a href="assets/images/create-article.png" target="_blank">View Image 1</a></li>
+      </ul>
+      <p>When the article is submitted you will be redirected to the articles under review page. <a href="assets/images/articles-under.png" target="_blank">View Image 2</a></p>
+      <h4 id="roles_step4"><strong>Reviewer</strong></h4>
+      <h5>Feedback</h5>
+      <p>Reviewer can only give the feedback to the articles assigned to him/her. <a href="assets/images/reviewer-feedback.png" target="_blank">View Image </a></p>
+      <h4 id="roles_step5"><strong>Reader</strong></h4>
+      <h5>Download Purchased Articles</h5>
+      <ul>
+        <li>If payment settings is set to individual product.</li>
+        <li>Then only reader can purchase the article and download it form Download Products Menu as shown in the image
+          below.</li>
+        <li>Reader can generate the invoice and can print it</li>
+        <li><a href="assets/images/reader-downloads.png" target="_blank">View Image </a></li>
+      </ul>
+      <hr>
+      <h3 id="step8"><strong>Since version 1.0</strong> -</h3>
+      <p>- Released Docs Peer Review System(PRS)</p>
+      <hr class="space">
+    </div>
+    <footer style="margin: 0 !important;">©2021 Docs Peer Review System(PRS). All rights reserved.</footer>
+  </div>
+  <!-- end div .container -->
+  <!-- end wrapper -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/retina.js"></script>
+  <script src="js/jquery.fitvids.js"></script>
+  <script src="js/wow.js"></script>
+  <script src="js/jquery.prettyPhoto.js"></script>
+  <!-- CUSTOM PLUGINS -->
+  <script src="js/custom.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/syntax-highlighter/scripts/shCore.js"></script>
+  <script src="js/syntax-highlighter/scripts/shBrushXml.js"></script>
+  <script src="js/syntax-highlighter/scripts/shBrushCss.js"></script>
+  <script src="js/syntax-highlighter/scripts/shBrushJScript.js"></script>
 </body>
 
 </html>
