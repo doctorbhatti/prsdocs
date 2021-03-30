@@ -34,15 +34,15 @@ html.dark .intro1 {
 }
 
 html.dark .intro1 a {
-    color: #F16811 !important;
+    color: #ff2942 !important;
 }
 
 html.dark a {
-    color: #CC8548;
+    color: #df4759;
 }
 
 html.dark a:hover {
-    color: #F16811;
+    color: #ff2942;
 }
 
 html.dark .intro2 {
